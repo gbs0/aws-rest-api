@@ -10,8 +10,16 @@ exports.handler = function(event, context, callback) {
 		TableName: "Creations",
 		Key: {
 			id: {
-				
+				S: "12345"
 			}
 		}
 	}		
+
+	db.getItem(params, (err, data) => {
+		if (err) {
+			console.log(err);
+		}
+		console.log(data);
+	})
+
 }
