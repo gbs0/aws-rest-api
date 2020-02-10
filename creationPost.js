@@ -1,5 +1,6 @@
 'use strict';
 const AWS = require('aws-sdk');
+const uuidv3 = require('uuid/v3');
 
 exports.handler = async (event, context) => {
   const documentClient = new AWS.DynamoDB.DocumentClient();
