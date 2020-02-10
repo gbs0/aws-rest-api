@@ -1,0 +1,22 @@
+{
+  "name": "aws-rest-api",
+  "version": "1.0.0",
+  "description": "A simple http lambda for contracts creation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbs0/aws-rest-api.git"
+  },
+  "author": "Gabriel Schiavo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbs0/aws-rest-api/issues"
+  },
+  "homepage": "https://github.com/gbs0/aws-rest-api#readme",
+  "dependencies": {
+    "uuid": "^3.4.0"
+  }
+}
