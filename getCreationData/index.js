@@ -5,16 +5,15 @@ AWS.config.update({ region: "us-east-2"})
 
 exports.handler = function(event, context, callback) {
 	const db = new AWS.DynamoDB({ apiVersion: "2012-10-17"});
+	const documentClient = new AWS.DynamoDB.documentClient({ region: "us-east-2"});
 	const params = {
 		TableName: "Creations",
 		Key: {
-			id: {
-				S: "12345"
-			}
+			id: "12345"
 		}
 	}		
 
-	db.getItem(params, (err, data) => {
+	documentClient.get(params, (err, data) => {
 		if (err) {
 			console.log(err);
 		}
