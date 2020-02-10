@@ -7,13 +7,20 @@ exports.handler = async (event, context) => {
   let responseBody = "";
   let statusCode = 0;
 
-  const { id, productname } = JSON.parse(event.body);
+  const { id, name, cpf, email, birth, address, loan, income, maritial } = JSON.parse(event.body);
 
   const params = {
     TableName: "Creations",
     Item: {
       id: id,
-      productname: productname
+      name: name,
+      cpf: cpf,
+      email: email,
+      birth: birth,
+      address: address,
+      loan: loan,
+      income: income,
+      maritial: maritial
     }
   };
 
@@ -22,7 +29,7 @@ exports.handler = async (event, context) => {
     responseBody = JSON.stringify(data);
     statusCode = 201;
   } catch(err) {
-    responseBody = `Unable to put product: ${err}`;
+    responseBody = `Unable to put new contract: ${err}`;
     statusCode = 403;
   }
 
