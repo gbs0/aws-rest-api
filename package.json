@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gbs0/aws-rest-api#readme",
   "dependencies": {
+    "aws-sdk": "^2.615.0",
     "uuid": "^3.4.0"
   }
 }
