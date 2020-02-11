@@ -1,25 +1,12 @@
 {
-  "id": "12345",
-  "address_proof": "edbr01.jpg",
-  "document": "rg0001.jpg",
-  "property_img": "wts000001.jpg",
-  "user_id": "6ba7b812"
-}
-
-{
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "CreationInputModel",
+  "title": "UploadInputModel",
   "type": "object",
   "properties": {
     "id": { "type": "string" },
-    "address": { "type": "string" },
-    "birth": { "type": "string" },
-    "cpf": { "type": "number" },
-    "email": { "type": "string" },
-    "income": { "type": "number" },
-    "loan": { "type": "number" },
-    "maritial": { "type": "string" },
-    "name": { "type": "string" },
+    "address_proof": { "type": "string" },
+    "document": { "type": "string" },
+    "property_img": { "type": "string" },
     "user_id": { "type": "string" }
   }
 }
