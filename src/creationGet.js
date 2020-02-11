@@ -12,11 +12,11 @@ exports.handler = async (event, context) => {
   };
 
   try {
-    const data = await docClient.put(params).promise();
-    responseBody = JSON.stringify(data.Items);
+    const data = await docClient.scan(params).promise();
+    responseBody = JSON.stringify(data);
     statusCode = 201;
   } catch(err) {
-    responseBody = `Unable to put : ${err}`;
+    responseBody = `Unable to retrieve table: ${err}`;
     statusCode = 403;
   }
 
