@@ -5,3 +5,21 @@
   "property_img": "wts000001.jpg",
   "user_id": "6ba7b812"
 }
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CreationInputModel",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "address": { "type": "string" },
+    "birth": { "type": "string" },
+    "cpf": { "type": "number" },
+    "email": { "type": "string" },
+    "income": { "type": "number" },
+    "loan": { "type": "number" },
+    "maritial": { "type": "string" },
+    "name": { "type": "string" },
+    "user_id": { "type": "string" }
+  }
+}
