@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ApprovalInputModel",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "approved": { "type": "string" },
+    "user_id": { "type": "string" }
+  }
+}
