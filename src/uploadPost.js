@@ -10,15 +10,13 @@ exports.handler = async (event, context) => {
   let responseBody = "";
   let statusCode = 0;
 
-  const { id, address_proof, document, property_img, user_id } = JSON.parse(event.body);
+  const { id, approved, user_id } = JSON.parse(event.body);
 
   const params = {
-    TableName: "Uploads",
+    TableName: "Approvals",
     Item: {
       id: id,
-      address_proof: address_proof,
-      document: document,
-      property_img: property_img,
+      approved: approved,
       user_id: user_id
     }
   };
