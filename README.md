@@ -152,26 +152,20 @@ OPTIONS
 
 ## `Approvals GET [PATH]`
 
-create a new CLI plugin
+Retrieve all approvals contracts in API using:
+> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals
 
 ```
-USAGE
-  $ oclif plugin [PATH]
-
-ARGUMENTS
-  PATH  path to project, defaults to current directory
-
-OPTIONS
-  --defaults         use defaults for every setting
-  --force            overwrite existing files
-  --options=options  (yarn|typescript|eslint|mocha)
+curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals'
 ```
 
 
 
 ## `Approvals POST [PATH]`
 
-generate a new single-command CLI
+Post a new approval in API using:
+> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals/id
+
 
 ```
 USAGE
