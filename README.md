@@ -2,13 +2,7 @@
 Less Contracts: A Serverless CLI Framework For Serverless 
 =================================
 
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/oclif)
-
 [![Version](https://img.shields.io/npm/v/oclif.svg)](https://npmjs.org/package/oclif)
-
-[![CircleCI](https://circleci.com/gh/oclif/oclif/tree/master.svg?style=shield)](https://circleci.com/gh/oclif/oclif/tree/master)
-
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/oclif/oclif?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/oclif/branch/master)
 
 [![License](https://img.shields.io/npm/l/oclif.svg)](https://github.com/oclif/oclif/blob/master/package.json)
 
@@ -24,27 +18,28 @@ Less Contracts: A Serverless CLI Framework For Serverless
 ## 🗒 Description
 
 This is a framework for building new contracts using serverless lambdas.
-This framework was built out of the [AWS Frameworks](<AWS_SDK_ADDRESSS>) 
-It's designed for `curl` CLIs with a few methods options, deployed on Amazon S3.
+This framework was built out of the [AWS Frameworks](<AWS_SDK_ADDRESSS>), and 
+it's designed for `curl` CLIs with a few methods options, deployed on Amazon S3.
 
 
 ## 🚀 Getting Started Tutorial
 
-The [Getting Started tutorial](http://oclif.io/docs/introduction) is a step-by-step guide to introduce you to this API. If you have not developed anything in a command line before, this tutorial is a great place to get started.
+This is a step-by-step guide to introduce you to this API. If you have not developed anything in a command line before, this tutorial is a great place to get started.
 
 ```
-$ heroku info --app=<tab><tab> # will complete with all the Heroku apps a user has in their account
+$ git clone https://github.com/gbs0/aws-rest-api.git
 ```
 
 ## 📌 Requirements
 
-Currently, Node 8+ and 12+ is supported. We support [curl](https://nodejs.org/en/about/releases). You can add the [-X](https://www.npmjs.com/package/node) package to your CLI to ensure that all data w running a specific version of Node.
+Currently, Node 8+ and 12+ is supported. We support [curl](https://nodejs.org/en/about/releases). You can add the [-X](https://www.npmjs.com/package/node) actions (`POST` or `GET`) to your CLI to ensure that all data il'be send for a specific lambda function.
 
 ## 🌈 CLI Types
 
-With this API you can create 2 different CLI types, single and multi.
+With this API you can create 2 different CLI types, POST and GET.
 
-Single CLIs are like `ls` or `cat`. They can accept arguments and flags. Single CLIs can [optionally be a single file](https://github.com/oclif/command).
+Single CLIs are like `ls` or `cat`. They can accept arguments and flags. 
+See more of then for [optionally retrieve other methods](https://github.com/oclif/command).
 
 Multi CLIs are like `git` or `heroku`. They have subcommands that are themselves single CLIs. In the `package.json` there is a field `oclif.commands` that points to a directory. This directory contains all the subcommands for the CLI. For example, if you had a CLI called `mycli` with the commands `mycli create` and `mycli destroy`, you would have a project like the following:
 
@@ -59,30 +54,31 @@ getItemP/
 Multi-command CLIs may also include [plugins](https://oclif.io/docs/plugins).
 
 
-# 🔨 Usage & Commands
+# 🔨 Commands
 
 ### Routes
 <!-- commands -->
-* [`*/creations/`](#oclif-command-name)
-* [`*/creations/id`](#oclif-help-command)
-* [`*/uploads/`](#oclif-hook-name)
-* [`*/uploads/id`](#oclif-multi-path)
-* [`*/approvals/`](#oclif-plugin-path)
-* [`*/approvals/id`](#oclif-single-path)
+* [`*.amazonaws.com/contract-api/creations/`](#creations-get-path)
+* [`*.amazonaws.com/contract-api/creations/id`](#creations-post-path)
+* [`*.amazonaws.com/contract-api/uploads/`](#uploads-get-path)
+* [`*.amazonaws.com/contract-api/uploads/id`](#uploads-post-path)
+* [`*.amazonaws.com/contract-api/approvals/`](#approvals-get-path)
+* [`*.amazonaws.com/contract-api/approvals/id`](#approvals-post-path)
 
-## `GET ITEMS`
+## `Creations GET [PATH]`
 
-add a command to an existing CLI or plugin
+Retrieve all available contracts in API using:
+> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations
+
 
 ```
-curl -XGET -H "Content-type: application/json" 'https://2c8cx5whk0.execute-api.us-east-1.amazonaws.com/dev/user/590b52ff086041000142cedd'
+curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations'
 ```
 
-_See code: [src/commands/command.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/command.ts)_
 
-## `POST ITEM`
+## `Creations POST [PATH]`
 
-Post a new contract on API on:
+Post a new contract in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id
 
 ```
@@ -100,15 +96,15 @@ curl -XPOST -H "Content-type: application/json" -d '{
 }' 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id'
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
 
-## `oclif hook NAME`
+## `Uploads GET [PATH]`
 
-add a hook to an existing CLI or plugin
+Retrieve all availables uploads in API using:
+
 
 ```
 curl -v -X POST
-'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id'
+'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id'
 -H 'Content-Type: application/json'
 -d '{
   "address": "Rua Limeira",
@@ -124,11 +120,11 @@ curl -v -X POST
 }'
 ```
 
-_See code: [src/commands/hook.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/hook.ts)_
 
-## `oclif multi [PATH]`
 
-generate a new multi-command CLI
+## `Uploads POST [PATH]`
+
+
 
 ```
 USAGE
@@ -143,9 +139,8 @@ OPTIONS
   --options=options  (yarn|typescript|eslint|mocha)
 ```
 
-_See code: [src/commands/multi.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/multi.ts)_
 
-## `oclif plugin [PATH]`
+## `Approvals GET [PATH]`
 
 create a new CLI plugin
 
@@ -164,7 +159,7 @@ OPTIONS
 
 _See code: [src/commands/plugin.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/plugin.ts)_
 
-## `oclif single [PATH]`
+## `Approvals POST [PATH]`
 
 generate a new single-command CLI
 
@@ -181,8 +176,6 @@ OPTIONS
   --options=options  (yarn|typescript|eslint|mocha)
 ```
 
-_See code: [src/commands/single.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/single.ts)_
-<!-- commandsstop -->
 
 
 # 📣 Feedback
