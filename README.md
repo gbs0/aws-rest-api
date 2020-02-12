@@ -41,17 +41,23 @@ With this API you can create 2 different CLI types, POST and GET.
 Single CLIs are like `ls` or `cat`. They can accept arguments and flags. 
 See more of then for [optionally retrieve other methods](https://github.com/oclif/command).
 
-Multi CLIs are like `git` or `heroku`. They have subcommands that are themselves single CLIs. In the `package.json` there is a field `oclif.commands` that points to a directory. This directory contains all the subcommands for the CLI. For example, if you had a CLI called `mycli` with the commands `mycli create` and `mycli destroy`, you would have a project like the following:
+CLIs are like `git` or `heroku`. They have commands that are themselves single CLIs. In the `src` folder there are files that points to a lambda function. This directory contains the main files for the CLI. For `models`, you would have a project like the following:
 
 ```
 package.json
-getItemP/
-└── commands/
-    ├── create.ts
-    └── destroy.ts
+models/
+└──├── approvalModel.json
+   ├── creationModel.json
+   └── uploadModel.json
+src/
+└──├── approvalGet.js
+   ├── approvalGet.js
+   ├── approvalGet.json
+   ├── approvalGet.js
+   ├── approvalGet.js
+   └── destroy.ts
 ```
 
-Multi-command CLIs may also include [plugins](https://oclif.io/docs/plugins).
 
 
 # 🔨 Commands
@@ -100,7 +106,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
   "loan": 1000,
   "maritial": "Divorciada",
   "name": "Lais Torres",
-  "user_id": "6ba7b811"
+  "user_id": "6ba7b822"
 }' 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id'
 ```
 
@@ -111,21 +117,7 @@ Retrieve all availables uploads in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads
 
 ```
-curl -v -X POST
-'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id'
--H 'Content-Type: application/json'
--d '{
-  "address": "Rua Limeira",
-  "birth": "02/02/2020",
-  "cpf": 123456792,
-  "email": "lais@gmail.com",
-  "id": "11346",
-  "income": 5000,
-  "loan": 1000,
-  "maritial": "Divorciada",
-  "name": "Lais Torres",
-  "user_id": "6ba7b811"
-}'
+curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads'
 ```
 
 
@@ -137,16 +129,14 @@ Post a new contract in API using:
 
 
 ```
-USAGE
-  $ oclif multi Method
-
-ARGUMENTS
-  PATH  path to project, defaults to current directory
-
-OPTIONS
-  --defaults         use defaults for every setting
-  --force            overwrite existing files
-  --options=options  (yarn|typescript|eslint|mocha)
+curl -XPOST -H "Content-type: application/json" -d '{
+  "id": "11346",
+  "address_proof": "edbr01.jpg",
+  "document": "cnh0001.jpg",
+  "property_img": "whatsapp-image-000001.jpg",
+  "user_id": "6ba7b822"
+}'
+ 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id'
 ```
 
 
@@ -168,16 +158,12 @@ Post a new approval in API using:
 
 
 ```
-USAGE
-  $ oclif single [PATH]
-
-ARGUMENTS
-  PATH  path to project, defaults to current directory
-
-OPTIONS
-  --defaults         use defaults for every setting
-  --force            overwrite existing files
-  --options=options  (yarn|typescript|eslint|mocha)
+curl -XPOST -H "Content-type: application/json" -d '{
+  "id": "11346",
+  "approved": "false",
+  "user_id": "6ba7b822"
+}'
+ 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id'
 ```
 
 
