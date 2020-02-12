@@ -58,21 +58,21 @@ Multi-command CLIs may also include [plugins](https://oclif.io/docs/plugins).
 
 ### Routes
 <!-- commands -->
-> GET
+> Creations GET
 * [`*.amazonaws.com/contract-api/creations/`](#creations-get-path)
-> POST
+> Creations POST
 * [`*.amazonaws.com/contract-api/creations/id`](#creations-post-path)
-> GET
+> Uploads GET
 * [`*.amazonaws.com/contract-api/uploads/`](#uploads-get-path)
-> POST
+> Uploads POST
 * [`*.amazonaws.com/contract-api/uploads/id`](#uploads-post-path)
-> GET
+> Approvals GET
 * [`*.amazonaws.com/contract-api/approvals/`](#approvals-get-path)
-> POST
+> Approvals POST
 * [`*.amazonaws.com/contract-api/approvals/id`](#approvals-post-path)
 
 
-## `Creations GET [PATH]`
+## `Creations GET Method`
 
 Retrieve all available contracts in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations
@@ -84,8 +84,7 @@ curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.u
 
 
 
-
-## `Creations POST [PATH]`
+## `Creations POST Method`
 
 Post a new contract in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id
@@ -106,7 +105,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 ```
 
 
-## `Uploads GET [PATH]`
+## `Uploads GET Method`
 
 Retrieve all availables uploads in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads
@@ -131,7 +130,7 @@ curl -v -X POST
 
 
 
-## `Uploads POST [PATH]`
+## `Uploads POST Method`
 
 Post a new contract in API using:
 > https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id
@@ -139,7 +138,7 @@ Post a new contract in API using:
 
 ```
 USAGE
-  $ oclif multi [PATH]
+  $ oclif multi Method
 
 ARGUMENTS
   PATH  path to project, defaults to current directory
