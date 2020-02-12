@@ -81,7 +81,7 @@ src/
 ## `Creations GET Method`
 
 Retrieve all available contracts in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations
+
 
 
 ```
@@ -93,7 +93,7 @@ curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.u
 ## `Creations POST Method`
 
 Post a new contract in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations/id
+
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -114,7 +114,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 ## `Uploads GET Method`
 
 Retrieve all availables uploads in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads
+
 
 ```
 curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads'
@@ -125,7 +125,7 @@ curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.u
 ## `Uploads POST Method`
 
 Post a new contract in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id
+
 
 
 ```
@@ -143,7 +143,6 @@ curl -XPOST -H "Content-type: application/json" -d '{
 ## `Approvals GET [PATH]`
 
 Retrieve all approvals contracts in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals
 
 ```
 curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals'
@@ -154,7 +153,6 @@ curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.u
 ## `Approvals POST [PATH]`
 
 Post a new approval in API using:
-> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/approvals/id
 
 
 ```
