@@ -58,12 +58,19 @@ Multi-command CLIs may also include [plugins](https://oclif.io/docs/plugins).
 
 ### Routes
 <!-- commands -->
+> GET
 * [`*.amazonaws.com/contract-api/creations/`](#creations-get-path)
+> POST
 * [`*.amazonaws.com/contract-api/creations/id`](#creations-post-path)
+> GET
 * [`*.amazonaws.com/contract-api/uploads/`](#uploads-get-path)
+> POST
 * [`*.amazonaws.com/contract-api/uploads/id`](#uploads-post-path)
+> GET
 * [`*.amazonaws.com/contract-api/approvals/`](#approvals-get-path)
+> POST
 * [`*.amazonaws.com/contract-api/approvals/id`](#approvals-post-path)
+
 
 ## `Creations GET [PATH]`
 
@@ -74,6 +81,8 @@ Retrieve all available contracts in API using:
 ```
 curl -XGET -H "Content-type: application/json" 'https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/creations'
 ```
+
+
 
 
 ## `Creations POST [PATH]`
@@ -100,7 +109,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
 ## `Uploads GET [PATH]`
 
 Retrieve all availables uploads in API using:
-
+> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads
 
 ```
 curl -v -X POST
@@ -124,6 +133,8 @@ curl -v -X POST
 
 ## `Uploads POST [PATH]`
 
+Post a new contract in API using:
+> https://9sz3tkjso5.execute-api.us-east-2.amazonaws.com/contract-api/uploads/id
 
 
 ```
@@ -157,7 +168,7 @@ OPTIONS
   --options=options  (yarn|typescript|eslint|mocha)
 ```
 
-_See code: [src/commands/plugin.ts](https://github.com/oclif/oclif/blob/v1.15.2/src/commands/plugin.ts)_
+
 
 ## `Approvals POST [PATH]`
 
