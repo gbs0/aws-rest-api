@@ -32,14 +32,14 @@ $ git clone https://github.com/gbs0/aws-rest-api.git
 
 ## 📌 Requirements
 
-Currently, Node 8+ and 12+ is supported. We support [curl](https://nodejs.org/en/about/releases). You can add the [-X](https://www.npmjs.com/package/node) actions (`POST` or `GET`) to your CLI to ensure that all data il'be send for a specific lambda function.
+Currently, Node 8+ and 12+ is supported. We support [curl](https://curl.haxx.se/docs/). You can add the [-X](https://curl.haxx.se/docs/httpscripting.html#GET) actions (`POST` or `GET`) to your CLI to ensure that all data il'be send for a specific lambda function.
 
 ## 🌈 CLI Types
 
 With this API you can create 2 different CLI types, POST and GET.
 
 Single CLIs are like `ls` or `cat`. They can accept arguments and flags. 
-See more of then for [optionally retrieve other methods](https://github.com/oclif/command).
+See more of then for [optionally retrieve other methods](https://curl.haxx.se/docs/httpscripting.html#Multiple_URLs_in_a_single_comman).
 
 CLIs are like `git` or `heroku`. They have commands that are themselves single CLIs. In the `src` folder there are files that points to a lambda function. This directory contains the main files for the CLI. For `models`, you would have a project like the following:
 
@@ -81,7 +81,6 @@ src/
 ## `Creations GET Method`
 
 Retrieve all available contracts in API using:
-
 
 
 ```
