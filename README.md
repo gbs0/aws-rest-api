@@ -18,7 +18,7 @@ Less Contracts: A Serverless CLI Framework For Serverless
 ## 🗒 Description
 
 This is a framework for building new contracts using serverless lambdas.
-This framework was built out of the [AWS Frameworks](<AWS_SDK_ADDRESSS>), and 
+This framework was built out of the [AWS Frameworks](https://aws.amazon.com/pt/), and 
 it's designed for `curl` CLIs with a few methods options, deployed on Amazon S3.
 
 
